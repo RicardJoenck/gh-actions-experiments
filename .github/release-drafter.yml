@@ -1,15 +1,15 @@
 change-template: '- $TITLE (#$NUMBER) @$AUTHOR'
 exclude-labels:
-  - 'release'
-  - 'skip_changelog'
+  - ':tada: release'
+  - ':no_entry_sign: skip'
 categories:
   - title: '🚀 Features'
-    label: 'feature'
+    label: ':star: feature'
   - title: '🐛 Bug Fixes'
     labels:
-      - 'fix'
-      - 'bugfix'
-      - 'bug'
+      - ':ambulance: fix'
+      - ':fire: hotfix'
+      - ':bug: bug'
 template: |
   <!-- Before doing this release, make sure to verify the tag number -->
 
