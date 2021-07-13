@@ -22,7 +22,7 @@ jobs:
         id: check
         uses: EndBug/version-check@v2.0.1
         with: 
-          file-name: ./package.json  
+          file-name: ../../package.json  
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Draft release notes
         uses: release-drafter/release-drafter@v5
