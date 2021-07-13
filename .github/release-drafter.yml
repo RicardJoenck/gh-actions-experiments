@@ -2,6 +2,14 @@ change-template: '- $TITLE (#$NUMBER) @$AUTHOR'
 exclude-labels:
   - 'release'
   - 'skip_changelog'
+categories:
+  - title: '🚀 Features'
+    label: 'feature'
+  - title: '🐛 Bug Fixes'
+    labels:
+      - 'fix'
+      - 'bugfix'
+      - 'bug'
 template: |
   <!-- Before doing this release, make sure to verify the tag number -->
 
