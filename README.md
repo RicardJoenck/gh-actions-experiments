@@ -2,4 +2,4 @@
 
 PO/EM DEMO x2
 
-a new change to test squash new test
+a new change to test squash new test new new test
