@@ -18,14 +18,18 @@ jobs:
     runs-on: ubuntu-latest
     if: "contains(github.head_ref, 'RC/')" # Skips if the merged branch does not contain the 'RC/' prefix
     steps:
-      - name: Get NPM version
-        id: package-version
-        uses: martinbeentjes/npm-get-version-action@master
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          ref: main
+      - name: Version Check
+        id: check
+        uses: EndBug/version-check@v2.0.1      
       - name: Draft release notes
         uses: release-drafter/release-drafter@v5
         with:
-          tag: ${{ steps.package-version.outputs.current-version }}
-          version: ${{ steps.package-version.outputs.current-version }}
-          name: Release ${{ steps.package-version.outputs.current-version }} 🔥
+          tag: ${{ steps.check.outputs.version }}
+          version: ${{ steps.check.outputs.version }}
+          name: Release ${{ steps.check.outputs.version }} 🔥
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
